@@ -119,7 +119,7 @@ function Landing() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://picsum.photos/220/200"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
