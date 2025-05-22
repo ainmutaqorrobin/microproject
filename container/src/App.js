@@ -1,3 +1,10 @@
+import MarketingApp from "./components/marketingApp";
+
 export default () => {
-  return <h1>This is container</h1>;
+  return (
+    <div>
+      <hr />
+      <MarketingApp />
+    </div>
+  );
 };
