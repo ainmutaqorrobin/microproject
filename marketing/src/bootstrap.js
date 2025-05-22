@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 const renderMarketing = (htmlElement) => {
-  ReactDom.render(<h1>This is marketing app!</h1>, htmlElement);
+  ReactDOM.render(<App />, htmlElement);
 };
 
 if (process.env.NODE_ENV === "development") {
-  const element = document.querySelector("#local-marketing");
+  const element = document.querySelector("#_local-marketing");
 
   if (element) {
     renderMarketing(element);

@@ -7,7 +7,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", "@babel/preset-env"],
+            presets: [
+              ["@babel/preset-react", { runtime: "automatic" }], // To avoid React is not defined problem if not importing React from "react"
+              "@babel/preset-env",
+            ],
             plugins: ["@babel/plugin-transform-runtime"],
           },
         },
