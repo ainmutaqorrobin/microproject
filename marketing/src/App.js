@@ -1,12 +1,20 @@
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { StylesProvider } from "@material-ui/core/styles";
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
 import Pricing from "./components/Pricing";
 import Landing from "./components/Landing";
+
+//to avoid css coalition bug, so renamed the prefix name with different tag
+const generateClassName = createGenerateClassName({
+  productionPrefix: "ma",
+});
 
 function App() {
   return (
     <div>
-      <StylesProvider>
+      <StylesProvider generateClassName={generateClassName}>
         <BrowserRouter>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
