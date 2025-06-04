@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
-const renderMarketing = (
+const renderAuth = (
   htmlElement,
   { onNavigate, initialPathname, defaultHistory }
 ) => {
@@ -28,8 +28,8 @@ if (process.env.NODE_ENV === "development") {
   const element = document.querySelector("#_local-auth");
 
   if (element) {
-    renderMarketing(element, { defaultHistory: createBrowserHistory() });
+    renderAuth(element, { defaultHistory: createBrowserHistory() });
   }
 }
 
-export { renderMarketing };
+export { renderAuth };
