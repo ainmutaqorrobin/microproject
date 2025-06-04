@@ -6,13 +6,11 @@ const renderMarketing = (
   htmlElement,
   { onNavigate, initialPathname, defaultHistory }
 ) => {
-  const history = defaultHistory || createMemoryHistory();
+  const history =
+    defaultHistory ||
+    createMemoryHistory({ initialEntries: [initialPathname] });
 
   if (onNavigate) history.listen(onNavigate);
-  if (initialPathname) {
-    const { pathname } = history.location;
-    if (pathname !== initialPathname) history.push(initialPathname);
-  }
 
   ReactDOM.render(<App history={history} />, htmlElement);
 
