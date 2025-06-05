@@ -2,7 +2,7 @@ import { renderAuth } from "authTeam/AuthApp";
 import { useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 
-export default () => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -13,6 +13,7 @@ export default () => {
         if (pathname !== nextPath) history.push(nextPath);
       },
       initialPathname: history.location.pathname,
+      onSignIn,
     });
 
     history.listen(onParentNavigate);
