@@ -4,7 +4,7 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 
 const renderAuth = (
   htmlElement,
-  { onNavigate, initialPathname, defaultHistory }
+  { onNavigate, initialPathname, defaultHistory, onSignIn }
 ) => {
   const history =
     defaultHistory ||
@@ -12,7 +12,7 @@ const renderAuth = (
 
   if (onNavigate) history.listen(onNavigate);
 
-  ReactDOM.render(<App history={history} />, htmlElement);
+  ReactDOM.render(<App onSignIn={onSignIn} history={history} />, htmlElement);
 
   return {
     onParentNavigate({ pathname: nextPath }) {
