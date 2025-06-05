@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "build": "webpack --config config/webpack.prod.js",
+    "start:all": "concurrently \"npm:start:auth\" \"npm:start:marketing\" \"npm:start\"",
+    "start:auth": "cd ../auth && npm start",
+    "start:marketing": "cd ../marketing && npm start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "concurrently": "^9.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
