@@ -4,9 +4,10 @@
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
-    "start:all": "concurrently \"npm:start:auth\" \"npm:start:marketing\" \"npm:start\"",
+    "start:all": "concurrently \"npm:start:auth\" \"npm:start:marketing\" \"npm:start:dashboard\" \"npm:start\"",
     "start:auth": "cd ../auth && npm start",
-    "start:marketing": "cd ../marketing && npm start"
+    "start:marketing": "cd ../marketing && npm start",
+    "start:dashboard": "cd ../dashboard && npm start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
